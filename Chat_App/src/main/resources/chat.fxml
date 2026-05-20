@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="ChatController" stylesheets="@style.css">
+    <top>
+        <HBox styleClass="topBar">
+            <Label text="Messenger" styleClass="title"/>
+        </HBox>
+    </top>
+    <center>
+        <ScrollPane fx:id="scrollPane" fitToWidth="true" style="-fx-background-color: #0e1621;">
+            <VBox fx:id="chatBox" spacing="15" styleClass="chatArea"/>
+        </ScrollPane>
+    </center>
+    <bottom>
+        <HBox spacing="10" styleClass="bottomBar">
+            <TextField fx:id="messageField" promptText="Type a message..." HBox.hgrow="ALWAYS" onAction="#sendMessage"/>
+            <Button text="Image" onAction="#sendImage" styleClass="image-button"/>
+            <Button text="Send" onAction="#sendMessage" styleClass="send-button"/>
+        </HBox>
+    </bottom>
+</BorderPane>
